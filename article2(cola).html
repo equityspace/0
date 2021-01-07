@@ -1,0 +1,442 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Equity Space</title>
+	<meta name="description" content="Empirical analysis on coca-cola (coca cola) with the help of python.">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	.btn {
+	  background-color: DodgerBlue;
+	  border: none;
+	  color: white;
+	  padding: 12px 30px;
+	  cursor: pointer;
+	  font-size: 20px;
+	}
+
+	/* Darker background on mouse-over */
+	.btn:hover {
+	  background-color: RoyalBlue;
+	}
+	</style>
+  </head>
+  <body>
+  
+  <div class="js-animsition animsition" id="site-wrap" data-animsition-in-class="fade-in" data-animsition-out-class="fade-out">
+
+
+    <header class="templateux-navbar dark" role="banner">
+     
+      <div class="container"  data-aos="fade-down">
+        <div class="row">
+
+          <div class="col-3 templateux-logo">
+            <a href="index.html" class="animsition-link" style="color:white">Equity Space</a>
+          </div>
+          <nav class="col-9 site-nav">
+            <button class="d-block d-md-none hamburger hamburger--spin templateux-toggle templateux-toggle-light ml-auto templateux-toggle-menu" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button> <!-- .templateux-toggle -->
+
+            <ul class="sf-menu templateux-menu d-none d-md-block">
+              <li>
+                <a href="index.html" class="animsition-link">Home</a>
+              </li>
+              <li><a href="about.html" class="animsition-link">About</a></li>
+              <li><a href="articles.html" class="animsition-link" style="color:white">Articles</a></li>
+              <li><a href="portfolio.html" class="animsition-link">Portfolio</a></li>
+            </ul> <!-- .templateux-menu -->
+
+          </nav> <!-- .site-nav -->
+          
+
+        </div> <!-- .row -->
+      </div> <!-- .container -->
+    </header> <!-- .templateux-navba -->
+    
+    <div class="templateux-cover" style="background-image: url(images/slider-1.jpg);">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h6 data-aos="fade-up">January 7, 2021</h6>
+            <h1 class="heading mb-3" data-aos="fade-up"  style="color:white">Coca-cola Analysis with Python</h1>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .templateux-cover -->
+
+
+
+    <div id="blog" class="templateux-section">
+    <div class="container">
+            
+            <div class="row">
+
+              <div class="col-md-12">
+                <h1 class="mb-3" style="font-size:350%;">Coca-cola Analysis with Python</h1><br>
+<h2 class="mb-3" style="font-size:230%;">Table of contents</h2>
+<div style="background-color:WhiteSmoke;border-style:solid;border-color:gray;">
+<ul style="font-size:130%;margin-bottom:0;padding-bottom:0;">
+	<li>Chapter 1) <a href="#Moving-Average-Kernel-competitors" style="color:blue">Moving average, Kernel density and competitors analysis</a></li>
+	<li>Chapter 2) <a href="#Beta-and-Capm" style="color:blue">Beta and Capm</a></li>
+	<li>Chapter 3) <a href="#Efficient-frontier" style="color:blue">Efficient frontier</a></li>
+	<li>Chapter 4) <a href="#Montecarlo-simulation" style="color:blue">Montecarlo simulation</a></li>
+</ul>
+</div>
+<br>
+<h2 class="mb-3" style="font-size:230%;">Company overview</h2>
+<img src="images/articles/2/1.png" alt="Server Error: can't fetch the image" class="img-fluid" style="float:right">
+<p style="font-size:130%;">
+<b>Company:</b> The Coca-Cola C.<br>
+<b>CEO:</b> James Quincey<br>
+<b>Year founded::</b> 1886<br>
+<b>Headquarter:</b> Atlanta, USA<br>
+<b>Number of Employees (Dec 2019):</b> 86,200<br>
+<b>Public or Private:</b> Public<br>
+<b>Ticker Symbo:</b> KO<br>
+<b>Market Cap (Oct 2020):</b> $218.25 Billion<br>
+<b>Annual Revenue (Dec 2019):</b> $37.27 Billion<br>
+<b>Profit |Net income (Dec 2019):</b> $8.92 Billion<br>
+</p><br>
+
+
+<br>
+<span id="Moving-Average-Kernel-competitors">
+<h2 class="mb-3" style="font-size:230%;">Chapter 1</h2>
+<h2 class="mb-3" style="font-size:230%;"><u>Moving average, Kernel density and competitors analysis</u></h2>
+<p style="font-size:130%;">The first thing I wanted to show is taking a quick look at the historical prices of Coca Cola. In order to do that I will extract latest stock data from pandas web-data reader and yahoo Finance.<br>
+The first thing I want to plot is the moving average, in order to have a first overlook.<br>
+A moving average (MA) is a stock indicator that is commonly used in technical analysis. The reason for calculating the moving average of a stock is to help smooth out the price data over a specified period of time by creating a constantly updated average price.<br>
+Moving averages are usually calculated to identify the trend direction of a stock or to determine its support and resistance levels.<sup id="1b"><a href="#1" style="color:blue">1</a></sup> I decided to use the data from 2010 to 2020. I will use the closing price, which is the final price in which the stocks are traded by the end of the day. The code is the follow:
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/2.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.1</p>
+<p style="font-size:130%;"><img src="images/articles/2/3.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.2</p>
+<p style="font-size:130%;">The first thing I want to do is import the libraries and modules I typically use in my analyses.<br>
+I ‘ve calculated the Moving Average for the last 100 days of the stock closing price and take the average for each of the window’s moving average. The Moving Average steadily rises over the window and does not follow the jagged line of the stock price chart. For better understanding, I plotted it out with Matplotlib. I will see the Moving Average with my Stocks Price Chart, as the following:
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/4.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.3</p>
+<br>
+<p style="font-size:130%;margin-bottom:0;padding-bottom:0;">The Moving Average shows the increasing or decreasing trend of a stock price. Logically, you should buy when the stocks are experiencing a downturn and sell when the stocks are experiencing an upturn.<br>
+The next thing I want to do is to analyze the competitors of coca cola. I’ve surf on Google and I found that the main competitors of coca cola are:
+</p>
+<ul style="font-size:130%;margin-bottom:0;padding-bottom:0;">
+	<li>PEP: Pepsi.co Inc</li>
+	<li>NSRGY: Nestlè</li>
+	<li>KDP: Keurig Dr Pepper Inc.</li>
+</ul>
+<p style="font-size:130%;">I decided to analyse the competition by running the percentage change and correlation function in pandas.<br>
+Percentage change will find how much the price changes compared to the previous day which defines returns. The correlation will help to see if the returns are affected by other stock returns.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/5.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.4</p>
+<p style="font-size:130%;"><img src="images/articles/2/6.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.5</p>
+<p style="font-size:130%;"><img src="images/articles/2/7.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.6</p>
+<p style="font-size:130%;">From this graph I can see there are slight positive correlations among NSRGY returns and KO returns. It seems like the higher the KO returns, the higher NSRGY returns as well for most cases.<br>
+I then decided to plot the scatter_matrix to visualize possible correlations among competing stocks. At the diagonal point, I will run a Kernel Density Estimate (KDE).In statistics, kernel density estimation (KDE) is a non-parametric way
+to estimate the probability density function of a random variable. Kernel density estimation is a fundamental data smoothing problem where inferences about the population are made, based on a finite data sample.<sup id="2b"><a href="#2" style="color:blue">2</a></sup><br>
+KDE is a fundamental data smoothing problem where inferences about the population are made on a finite data sample. It helps generate estimations of the overall distributions. The code is the following:
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/8.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.7</p>
+<p style="font-size:130%;">I found this graph:
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/9.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.8</p>
+<p style="font-size:130%;">From here I could see most of the distributions among stocks which approximately positive correlations.<br>
+To prove the positive correlations, I will use heat maps to visualize the correlation ranges among the competing stocks. The lighter the color, the more correlated the two stocks are.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/10.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.9</p>
+<p style="font-size:130%;">I’ve obtained the following graph:
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/11.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.10</p>
+<p style="font-size:130%;">From the Scatter Matrix and Heatmap, I can find great correlations among the competing stocks.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/12.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.11</p>
+<p style="font-size:130%;">I also analysed each stock’s risks and returns. In this case, I’m extracting the average returns (Return Rate) and the standard deviation of returns (Risk). Now I could view this chart of risk and return comparisons for competing stocks. Logically, I would like to minimize the risk and maximize returns. Therefore, I may be able to draw a
+line for my risk-return tolerance. The line showcases your expected value threshold and your baseline for buy/sell decision.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/13.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.12</p><br>
+</span>
+<br>
+<span id="Beta-and-Capm">
+<h2 class="mb-3" style="font-size:230%;">Chapter 2</h2>
+<h2 class="mb-3" style="font-size:230%;"><u>Beta and Capm</u></h2>
+<p style="font-size:130%;">Some securities are less risky, they have a lower standard deviation and will decrease less than the market. Certain stocks have a high level of volatility and perform bad in times of crisis. Some stocks are safer and will lose less and earn less than the market portfolio while other stocks are riskier and will do well when the economy flourishes and will do poorly in times of crisis. And that's precisely where beta of a company comes in handy.<br>
+<b>Beta</b> of a stock measures the relationship between a stock and the market portfolio.
+</p>
+<img src="images/articles/2/14.png" alt="Server Error: can't fetch the image" class="img-fluid">
+<p style="font-size:130%;margin-bottom:0;padding-bottom:0">Beta can be calculated as the covariance between the stock and the market divided by the variance of the market. It measures the market risk that cannot be avoided through diversification.<br>
+The riskier a stock the higher its Beta.
+</p>
+<ul style="font-size:130%;margin-bottom:0;padding-bottom:0;">
+	<li><b>B=0</b> means the stock has no relationship regarding the market.</li>
+	<li><b>B<1</b> means that the stock is defensive because if the market does poorly these stocks</li>
+</ul>
+<p style="font-size:130%;margin-bottom:0;padding-bottom:0;margin-top:0;padding-top:0;">will typically lose less
+</p>
+<ul style="font-size:130%;margin-bottom:0;padding-bottom:0;">
+	<li><b>B=1</b> the stockwill perform in the same way as the market does.</li>
+	<li>And finally stocks <b>B>1</b> are riskier than the market and do better than the market when the economy flourishes and lose more when it goes down.</li>
+</ul>
+<p style="font-size:130%;margin-top:0;padding-top:0;"><b>B is a measurement that shows us how risky an individual security is.</b>
+</p>
+<h4 class="mb-3" style="font-size:170%;">Capm</h4>
+<p style="font-size:130%;">The Capital Asset Pricing Model (CAPM) describes the relationship between systematic risk and expected return for assets, particularly stocks.<br>
+The formula for calculating the expected return of an asset given its risk is as follows:
+</p>
+<p style="font-size:150%;"><b>r<sub>a</sub> = r<sub>f</sub> + &beta;<sub>a</sub> (r<sub>m</sub> - r<sub>f</sub>)</b>
+</p>
+<p style="font-size:130%;">where:<br>
+r<sub>f</sub> = Risk Free Rate<br>
+r<sub>m</sub> = Expected Market Return<br>
+&beta;<sub>a</sub> = Beta of the security<br>
+Investors expect to be compensated for risk and the time value of money. The risk-free rate in the CAPM formula accounts for the time value of money. The other components of the CAPM formula account for the investor taking on additional risk. The beta of a potential investment is a measure of how much risk the investment will add to a portfolio that looks like the market. A stock’s beta is then multiplied by the market risk premium, which is the return expected from the market above the risk-free rate. The risk-free rate is then added to the product of the stock’s beta and the market risk premium. The result should give an investor the required return or discount rate they can use to find the value of an asset. The goal of the CAPM formula is to evaluate whether a stock is fairly valued when its risk and the time value of money are compared to its expected return.<sup id="3b"><a href="#3" style="color:blue">3</a></sup><br>
+The first indicator I choose for my financial analysis is the beta of a stock, in this case Coca-Cola (KO). The first thing I’ll do is import the libraries and modules I typically use in my analyses. Beta is typically measured with data from the past five years, so I choosed indicatively a start date on 2015. I want to calculate its beta and I will approximate the development of the market with the S&P 500 index. The first is the covariance between Ko and the S&P 500 and the second one is the variance of the S&P 500. I will need log returns; I can use NP to calculate and store them in a variable called security returns. I then calculated the variance of the market and annualized it. I obtained a beta of 0.68.<br>
+This means KO is a defensive stock. When the market goes up KO equity value will not overvalued while in times of crises you will typically lose less.<br>
+I then calculated the expected rate of return of KO, using capm formula.<br>
+I’ve obtained a expected rate of return of 0.042.<br>
+This is the return on investment a person would expect when buying stock.<br>
+In the next two photos, I’ve showed the codes.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/15.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 2.1</p>
+<p style="font-size:130%;"><img src="images/articles/2/16.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 2.2</p>
+<p style="font-size:130%;">I’ve choosen rf = 0,84% corresponding to the 10 year government bonds yield, like shown in the next photo regarding Bloomberg website; equity risk premium = 5% because academic research has proven the market risk premium for equities in the US has been between 4,5% and 5,5%. So I can simply use 5% as a good approximation.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/17.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 2.3</p>
+</span>
+<br>
+<span id="Efficient-frontier">
+<h2 class="mb-3" style="font-size:230%;">Chapter 3</h2>
+<h2 class="mb-3" style="font-size:230%;"><u>Efficient frontier</u></h2>
+<p style="font-size:130%;">In 1952 Harry Markowitz published a paper which was one of the most powerful academic. Markowitz proved the existence of an efficient set of portfolios that optimize investors return for the amount of risk they are willing to accept. One of the most important highlights of his work is that investments in multiple securities shouldn't be analyzed separately but should be considered in a portfolio and financier's must understand how different securities in a portfolio interact with each other.<br>
+A true measure for the relationship between two securities is the covariance. And that's precisely what Markowitz suggested through the combination of securities. With low correlation Investors can optimize their returns without assuming additional risk. Markowitz assumes investors are rational and risk averse so they are interested in earning higher returns and prefer avoiding additional risk.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/18.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 3.1</p>
+<p style="font-size:130%;">So I’ve calculated the efficient frontier of a group of portfolios composed of two assets. CocaCola (KO) stock and the S&P 500. The first thing we'll do is import the libraries and modules we typically use in our analyses. I will use data for the past 20 years starting from year 2000. I proceed with a few standard steps normalizing to 100 in applauding the portfolio data on a graph to see how the two assets have been performing throughout the time of interest.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/19.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 3.2</p>
+<p style="font-size:130%;">As we can see there was a gradually increasing in both the securities. We can also see how KO and S&P 500 respond to the financial crisis of 2008 and the actual crisis due to the pandemic crisis. There was a drop in the market and also a drop in KO.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/20.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 3.3</p>
+<p style="font-size:130%;">So if I want to obtain an efficient frontier composed of these assets we will need their log returns. Then I will need their average return and their covariance and correlation matrices and the returns are well correlated; infact corr=0.519, so grater than 30% and therefore I may say that KO and ^GSPC are well correlate
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/21.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 3.4</p>
+<p style="font-size:130%;">Firstly I created two random weights and their sum must be equal to 1. Then I calculated expected portfolio return,expected portfolio variance and volatility respectively. I went through these three cells because I will need the formulas for the return and the volatility in the simulation of the portfolios mean variance combinations.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/22.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 3.5</p>
+<p style="font-size:130%;">I will create a graph where 1000 mean variance simulations will be plotted. I’m considering 1000 combinations of the same two assets KO and the S&P 500. This means I simulate 1000 combinations of their weight values out of the 1000 combinations. First I will create a data frame object containing two columns: one for returns and another one for the respective volatilities. we will call this object portfolios. Its data will be composed of a dictionary with keys return and volatility. I then plot data on a graph and I obtained the following graph:
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/23.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 3.6: This is the efficient frontier</p>
+<p style="font-size:130%;">The efficient frontier is the set of optimal portfolios that offer the highest expected return for a defined level of risk or the lowest risk for a given level of expected return. Portfolios that lie below the efficient frontier are sub-optimal because they do not provide enough return for the level of risk. Portfolios that cluster to the right of the efficient frontier are sub-optimal because they have a higher level of risk for the defined rate of return.<sup id="4b"><a href="#4" style="color:blue">4</a></sup>
+</p>
+</span>
+<br>
+<span id="Montecarlo-simulation">
+<h2 class="mb-3" style="font-size:230%;">Chapter 4</h2>
+<h2 class="mb-3" style="font-size:230%;"><u>Monte-Carlo simulation</u></h2>
+<h4 class="mb-3" style="font-size:170%;">Brief overview</h4>
+<p style="font-size:130%;margin-bottom:0;border-bottom:0">Monte-Carlo simulation can be used to model the development of asset prices such as stocks.<br>
+Furthermore the price of an equity share is something we've observed in the past. However its future development is unknown. The only information we have is about past prices. Tomorrow the company's shares could go up or down.<br>
+Let's look at the following formula: <b>Y<sub>t</sub> = Y<sub>t-1</sub> e<sup>r</sup></b><br>
+The price of a share today is equal to the price of the same share yesterday multiplied by esponential to the power of R; where r is the log return of the share.<br>
+This equation allows to depict today's stock price as a function of yesterday's stock price and the daily return.<br>
+I know yesterday's stock price but we don't know r as it is a random variable. Brownian motion is a concept that would allow to model such randomness. The formula that it can be used is made of two components.<br>
+The first one is called Drift and the second one is the stock's volatility.<br>
+Drift is the expected daily return of the stock; it is the best approximation about the future we have.<br>
+First I'll start by calculating the stocks periodic daily returns over the historical period. I only have to take a natural logarithm of the ratio between current and previous price. Once I have calculated daily returns in the historical period I can easily calculate their average standard deviation and variance.<br>
+</p>
+<p style="font-size:150%;text-align:center;margin-top:0;border-top:0;margin-bottom:0;border-bottom:0">Drift = AvgDailyReturn - 0.5 * variance
+</p>
+<p style="font-size:130%;margin-top:0;border-top:0;margin-bottom:0;border-bottom:0">The drift is the expected daily return of the stock.<br>
+The second component of a Brownian motion is the random variable it is given by the following equation:
+</p>
+<p style="font-size:150%;text-align:center;margin-top:0;border-top:0;margin-bottom:0;border-bottom:0">random variable = historical volatility * Z(rand(0,1))
+</p>
+<p style="font-size:130%;margin-top:0;border-top:0;">If I assume expected future returns are distributed normally Z of the percentage between 0 to 1 would give us the number of standard deviations away from the mean.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/24.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.1</p>
+<p style="font-size:130%;margin-bottom:0;border-bottom:0">I can do that because statisticians have calculated the distance between the mean and events that have a given probability of occurring probability between 0 and 1.<br>
+The equation of a stock's price today becomes:
+</p>
+<p style="font-size:150%;text-align:center;margin-top:0;border-top:0;margin-bottom:0;border-bottom:0">price today = price yesterday * e<sup>drift+random variable</sup>
+</p>
+<p style="font-size:130%;margin-top:0;border-top:0;">If I repeat this calculation 1000 times I'll be able to simulate the development of tomorrows stock price.
+</p>
+<br>
+<h4 class="mb-3" style="font-size:170%;">Running a montecarlo simulation on Coca cola stock</h4>
+<p style="font-size:130%;">In particular I want to predict predict the future stock price of Coca-cola. I will need norm from CPI and some specific map plant lab features.<br>
+The time frame under consideration reflects the past 10 years starting from January the 1st 2010. So the first thing I'll do is estimate its historical Log returns.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/25.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.2</p>
+<p style="font-size:130%;">in the first graph I can see KO price which has been gradually growing during the past decade. I can also see that during the first part of 2020, the price of the company falled due to covid-19 pandemic.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/26.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.3</p>
+<p style="font-size:130%;">In the next graph I plot the log returns the price of KO. (Not the prices!)
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/27.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.4</p>
+<p style="font-size:130%;margin-bottom:0;border-bottom:0">The picture tells the returns are normally distributed and have a stable mean.<br>
+After that I calculated the mean and the variance. After that I can calculate the drift like the next equation:
+</p>
+<p style="font-size:150%;text-align:center;margin-top:0;border-top:0;margin-bottom:0;border-bottom:0">Drift = u - 0.5 * var
+</p>
+<p style="font-size:130%;margin-top:0;border-top:0">“U” which is equals the average log return.
+</p><br>
+<p style="font-size:130%;">I’ve then calculated the 2 components of the Brownian motion, the drift and ???? It is the best approximation of future rates of return of the stock.<br>
+Next I created a variable called “stdev”,the standard deviation of log returns.<br>
+After that I need to convert these values( the drift and the stdev) into NP.Array.<br>
+The second component of the Brownian motion is a random variable z, a number corresponding to the distance between the mean and the events expressed as the number of standard deviations. So PPF code allows to obtain this result. The code are the following:
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/28.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.5</p>
+<p style="font-size:130%;">To complete the second component I will need to randomize. I did it with the “NP.random.rand” and I have to instert to argument in order to generate a multi dimensional array. So typing 10 and 2,I obtained a 10 by 2 matrix. I will include this random element within the PPf distribution. Those are the codes:
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/29.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.6</p>
+<p style="font-size:130%;">
+</p>
+<p style="font-size:130%;">The first number(-0.71844)from the first row( of the second array) corresponds to the first probability from the first row of the first matrix( 0.2362413) and so on..
+</p>
+<p style="font-size:130%;">The whole expression corresponding to Z will be of the type Norm.ppf. and I obtained the third array in the previous photo. The newly array uses the probabilities generated by the random function and converted them into distances from the mean zero as measured by the number of standard deviations.<br>
+This expression will create the value of Z as defined in the formula
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/30.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.7</p>
+<p style="font-size:130%;margin-bottom:0;border-bottom:0">Now I will be able to obtain daily returns.<br>
+<b>I specify the time intervals equal to 1000 because I’m interested in forecasting the stock price for the upcoming 1000 days.<br>
+Then I put iterations equals to 10, which means I will ask the computer to produce 10 series of future stock price predictions.</b><br>
+Now I can express the daily returns as:
+</p>
+<p style="font-size:150%;text-align:center;margin-top:0;border-top:0;margin-bottom:0;border-bottom:0">daily returns = E<sup>r</sup><br>
+r = Drift + stdev * z
+</p>
+<p style="font-size:130%;margin-top:0;border-top:0">Like shown in the previous photo I expressed those formulas in the codes, and I obtained an array of 10 sets of 1000 random future stock prices.
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/31.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.8</p>
+<p style="font-size:130%;">I now will create a price list. Remember:<br>
+S<sub>1</sub>=S<sub>0</sub>*daily returns<sub>1</sub><br>
+S<sub>t+1</sub>=S<sub>t</sub>*daily returns<sub>t+1</sub><br>
+...<br>
+S<sub>t+999</sub> = S<sub>t+998</sub>*daily returns<sub>t+999</sub><br><br>
+So each price must be equal to the product of the price observed the previous day and the simulated daily return.<br>
+Then this process will be repeated 1000 times and we will obtain a prediction of a company's stock price 1000 days from now.<br>
+In order to obtain that, I just before created a matrix containing daily returns and I can use it.<br>
+The first stock price in our list must be the last one in our data set.<br>
+It is the current market price and I called it S0.So the my first stock price is: 52.66 After that I Finally generated values for our price list.<br>
+I must set up a loop that begins in day 1 and ends at day 1000.<br>
+I can simply write down the formula for the expected stock price on date t: S<sub>t</sub>=S<sub>t-1</sub>*daily returns
+</p>
+<p style="font-size:130%;"><img src="images/articles/2/32.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.9</p>
+<p style="font-size:130%;">When I runned I will obtain 10 possible paths of the expected stock price of Coca Cola stock<br>
+starting from the last day for which I have data from Yahoo, like sown in the previous chart.
+</p>
+</span>
+<span id="1"><sup>1</sup> Definition MA,investopedia.com <a href="#1b" style="color:blue">back to read</a></span><br>
+<span id="2"><sup>2</sup> Kde definition, wikipedia. <a href="#2b" style="color:blue">back to read</a></span><br>
+<span id="3"><sup>3</sup> Definition Capm,www.investopedia.com <a href="#3b" style="color:blue">back to read</a></span><br>
+<span id="4"><sup>4</sup> Definition efficient frontier:www.investopedia.com <a href="#4b" style="color:blue">back to read</a></span><br>
+<br>
+<a href="files/coca cola empirical analysis.docx" style="font-size:130%;color:blue" download>
+<button class="btn"><i class="fa fa-download"></i> Download article</button></a>
+<!--
+<h2 class="mb-3" style="font-size:230%;">Svolgimento dell’analisi</h2>
+
+<p style="font-size:130%;">
+</p>
+<br>
+
+<p style="font-size:130%;"><img src="images/articles/2/.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 4.1</p>
+<br>
+-->
+
+              </div> <!-- .col-md-8 -->
+            </div>
+          </div>
+	</div>
+
+    
+    
+    <footer class="templateux-footer bg-light">
+      <div class="container">
+
+        <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="block-footer-widget">
+                  <h3>Contact Us</h3>
+                  <ul class="list-unstyled">
+                    <li>equityspace@outlook.com</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="block-footer-widget">
+                  <h3>About Us</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="about.html">About Us</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="block-footer-widget">
+                  <h3>Connect With Us</h3>
+                  <ul class="list-unstyled block-social">
+                    <li><a href="#" class="p-1"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div> <!-- .row -->
+            
+          </div>
+        </div> <!-- .row -->
+
+        <div class="row pt-5 text-left">
+          <div class="col-md-12 text-left"><p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p></div>
+        </div> <!-- .row -->
+
+      </div>
+    </footer> <!-- .templateux-footer -->
+    
+
+   </div> <!-- .js-animsition -->
+
+  
+  <script src="js/scripts-all.js"></script>
+  <script src="js/main.js"></script>
+  
+  </body>
+</html>
