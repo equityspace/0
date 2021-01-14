@@ -1,0 +1,293 @@
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Equity Space</title>
+	<meta name="description" content="Empirical analysis on coca-cola (coca cola) with the help of python.">
+    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+	.btn {
+	  background-color: DodgerBlue;
+	  border: none;
+	  color: white;
+	  padding: 12px 30px;
+	  cursor: pointer;
+	  font-size: 20px;
+	}
+
+	/* Darker background on mouse-over */
+	.btn:hover {
+	  background-color: RoyalBlue;
+	}
+	</style>
+  </head>
+  <body>
+  
+  <div class="js-animsition animsition" id="site-wrap" data-animsition-in-class="fade-in" data-animsition-out-class="fade-out">
+
+
+    <header class="templateux-navbar dark" role="banner">
+     
+      <div class="container"  data-aos="fade-down">
+        <div class="row">
+
+          <div class="col-3 templateux-logo">
+            <a href="index.html" class="animsition-link" style="color:white">Equity Space</a>
+          </div>
+          <nav class="col-9 site-nav">
+            <button class="d-block d-md-none hamburger hamburger--spin templateux-toggle templateux-toggle-light ml-auto templateux-toggle-menu" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+              </span>
+            </button> <!-- .templateux-toggle -->
+
+            <ul class="sf-menu templateux-menu d-none d-md-block">
+              <li>
+                <a href="index.html" class="animsition-link">Home</a>
+              </li>
+              <li><a href="about.html" class="animsition-link">About</a></li>
+              <li><a href="articles.html" class="animsition-link" style="color:white">Articles</a></li>
+              <li><a href="portfolio.html" class="animsition-link">Portfolio</a></li>
+            </ul> <!-- .templateux-menu -->
+
+          </nav> <!-- .site-nav -->
+          
+
+        </div> <!-- .row -->
+      </div> <!-- .container -->
+    </header> <!-- .templateux-navba -->
+    
+    <div class="templateux-cover" style="background-image: url(images/slider-1.jpg);">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-12">
+            <h6 data-aos="fade-up">January 7, 2021</h6>
+            <h1 class="heading mb-3" data-aos="fade-up"  style="color:white">Airbnb Equity Research</h1>
+          </div>
+        </div>
+      </div>
+    </div> <!-- .templateux-cover -->
+
+
+
+    <div id="blog" class="templateux-section">
+    <div class="container">
+            
+            <div class="row">
+
+              <div class="col-md-12">
+<h1 class="mb-3" style="font-size:350%;">Airbnb Equity Research</h1><br>
+<h2 class="mb-3" style="font-size:250%;"><u>Indice</u></h2>
+<div style="background-color:WhiteSmoke;border-style:solid;border-color:gray;">
+<ol type="1" style="font-size:135%;margin-bottom:0;padding-bottom:0;">
+	<li><a href="#Company-overview" style="color:blue"><u>Company overview</u></a></li>
+	<ol type="a" style="font-size:85%;margin-bottom:0;padding-bottom:0;margin-top:0;padding-top:0;">
+		<li><a href="#Storia" style="color:blue"><u>Storia</u></a></li>
+		<li><a href="#Quotazione" style="color:blue"><u>Quotazione</u></a></li>
+		<li><a href="#Innovazione" style="color:blue"><u>Innovazione</u></a></li>
+		<li><a href="#Futuro" style="color:blue"><u>Futuro</u></a></li>
+	</ol>
+	<li><a href="#Equity-research" style="color:blue"><u>Equity research</u></a></li>
+	<ol type="a" style="font-size:85%;margin-bottom:0;padding-bottom:0;margin-top:0;padding-top:0;">
+		<li><a href="#Discounted-Cash-Flow-(DCF)" style="color:blue"><u>Discounted Cash Flow (DCF)</u></a></li>
+		<li><a href="#Multipli-di-mercato" style="color:blue"><u>Multipli di mercato</u></a></li>
+		<li><a href="#Economic-Value-Added-(EVA)" style="color:blue"><u>Economic Value Added (EVA)</u></a></li>
+	</ol>
+	<li><a href="#Conclusioni" style="color:blue"><u>Conclusioni</u></a></li>
+</ol>
+</div>
+<br>
+<span id="Company-overview">
+<h2 class="mb-3" style="font-size:250%;"><u>Company overview</u></h2>
+<img width="55%" height="55%" src="images/articles/3/1.png" alt="Server Error: can't fetch the image" class="img-fluid" style="float:right">
+<p style="font-size:130%;">
+<b>Company:</b> Airbnb<br>
+<b>CEO:</b> Brian Chesky<br>
+<b>Year of foundation:</b> 2008<br>
+<b>Public or Private:</b> Public<br>
+<b>Ticker Symbol:</b> ABNB<br>
+<b>Market Cap (Jan 2021):</b> $89.4B<br>
+</p><br>
+<span id="Storia">
+<h2 class="mb-3" style="font-size:190%;"><u>Storia</u></h2>
+<p style="font-size:130%;">Airbnb nasce nel 2007 dalla mente dei giovani neolaureati Brian Chesky e Joe Gebbia i quali, di fronte alla difficoltà di pagare regolarmente l’affitto, hanno iniziato a mettere in locazione una delle stanze della casa in cui abitavano per raccogliere denaro. Approfittando di un evento di design dove si sarebbe alzata la richiesta di alloggi, in pochi giorni lanciarono il sito “Airbed and Breakfast”, il primitivo “Airbnb”, per cogliere l’opportunità e proporre come primo alloggio proprio la loro stanza. Il servizio nacque per soddisfare principalmente la domanda di alloggi da parte di studenti, con pochi soldi da spendere e senza esuberanti esigenze allocative.
+</p>
+<p style="font-size:130%;">Ben presto, l’idea di business si rivelò promettente, coinvolgendo target di clientela e location sempre nuovi. Oggi sono addirittura prenotabili castelli, case sull’albero e le più disparate soluzioni in tutto il mondo. È curioso notare come l’Italia, dopo Stati Uniti e Francia, è il terzo paese a livello internazionale per numero di annunci sul portale online, intorno ai 400 mila, dando alloggio a circa 10 milioni di persone nel 2019.
+</p>
+</span>
+<br>
+<span id="Quotazione">
+<h2 class="mb-3" style="font-size:190%;"><u>Quotazione</u></h2>
+<p style="font-size:130%;">Il settore del turismo è stato sicuramente uno dei più colpiti dalla pandemia. In uno sfondo tutt’altro che roseo, in cui l’azienda ha dovuto tra l’altro effettuare ingenti tagli al personale, Airbnb si è quotata in Borsa il 10 dicembre sul Nasdaq, riscontrando un forte interesse. Il primo prezzo di partenza è stato di 68 dollari. Oggi, dopo neanche un mese, il prezzo è più che raddoppiato.
+</p>
+<p style="font-size:130%;">La quotazione era molto attesa dagli investitori, ma non era affatto scontato che avvenisse. Ha sicuramente contribuito il ritorno ad una semi-normalità nei mesi estivi, nei quali Airbnb ha visto crescere notevolmente le prenotazioni e, grazie ad un deciso taglio dei costi, la realizzazione di un utile nel terzo trimestre. Gli investitori hanno recepito in modo molto positivo l’ottenimento di un risultato positivo, in primis come segnale di grande flessibilità.
+</p>
+</span>
+<span id="Innovazione">
+<h2 class="mb-3" style="font-size:190%;"><u>Innovazione</u></h2>
+<p style="font-size:130%;">In risposta al perdurare dell’attuale situazione, in cui la necessità di possedere un’abitazione risulta essere sempre più centrale, l’azienda statunitense nel mese di dicembre ha deciso di contribuire e offrire il proprio aiuto alla comunità creando un ente no-profit che mette a disposizione alloggi per le fasce economicamente più colpite dal Covid-19.
+</p>
+</span>
+<span id="Futuro">
+<h2 class="mb-3" style="font-size:190%;"><u>Cosa aspettarci in futuro?</u></h2>
+<p style="font-size:130%;">I mesi che seguiranno saranno caratterizzati da una forte incertezza, in quanto la pandemia porterà con sé notevoli cambiamenti. Tuttavia, è intuitivo aspettarsi una grande attenzione verso un turismo “sostenibile” con un deciso aumento di alloggi al di fuori dei grandi centri urbani e, da non dimenticare, anche la possibilità di prendere in affitto appartamenti da utilizzare come uffici adibiti a smart-working.
+</p>
+</span>
+</span>
+<br>
+<span id="Equity-research">
+<h2 class="mb-3" style="font-size:250%;"><u>Equity Research</u></h2>
+<span id="Discounted-Cash-Flow-(DCF)">
+<h2 class="mb-3" style="font-size:190%;"><u>Discounted Cash Flow</u></h2>
+<p style="font-size:130%;">Il metodo dei flussi di cassa attualizzati (DCF) permette di stimare il valore di un’impresa scontando ad oggi i flussi futuri. Ovviamente, è necessario fare approssimazioni, in quanto è impossibile poter prevedere con esattezza i numeri futuri. L’orizzonte che abbiamo preso in considerazione è tra il 2020 e il 2023. Partendo dall’utile, abbiamo ipotizzato che questo crescesse in misura pari ai ricavi, ossia del 30%, come evidenziato da analisti esterni ad Airbnb (fonte: Yahoo Finance). Per quanto riguarda le altre voci, abbiamo calcolato per ognuna di esse la rispettiva media dei rendiconti finanziari dei tre anni precedenti e poi ipotizzate costanti per il periodo interessato. Per scontare i flussi di cassa si utilizza uno specifico tasso, il Wacc (weighted average cost of capital). Tale valore (0.1542) è la media ponderata del costo del capitale (stimato con il CAPM) e del costo del debito (al netto della tassazione) rispettivamente ponderati per il peso dell’equity e del debito. L’analisi continua con la stima del valore terminale, il quale esprime il valore dell’azienda al termine del periodo di valutazione, ossia il valore attuale dei flussi che seguiranno dopo il 2023. Per poterlo stimare abbiamo utilizzato la formula di Gordon, la quale ipotizza un tasso di crescita costante. Il valore così ottenuto, andrà opportunamente attualizzato dal 2023 (termine della analisi) al 2020 (momento di compimento della analisi). Ora, siccome espressi su base comune, i due valori possono essere sommati. Per ottenere il valore corrente del capitale economico d’impresa è infine necessario aggiungere la liquidità e sottrarre i debiti finanziari presenti nello Stato Patrimoniale. Si ottiene così un valore superiore a 21.7 miliardi.
+</p>
+<img src="images/articles/3/2.png" alt="Server Error: can't fetch the image" class="img-fluid">
+<br><br>
+<img src="images/articles/3/3.png" alt="Server Error: can't fetch the image" class="img-fluid">
+<br>
+</span><br>
+<span id="Multipli-di-mercato">
+<h2 class="mb-3" style="font-size:190%;"><u>Multipli di mercato</u></h2>
+<p style="font-size:130%;">Un secondo metodo di valutazione che abbiamo adottato è attraverso i multipli. In particolare, abbiamo utilizzato il price/book-value medio dei concorrenti di Airbnb (Booking, Experia, Trip Advisor e Marriott International), opportunamente ponderati per la rispettiva capitalizzazione. Il valore così ottenuto, è stato poi moltiplicato per il book value (patrimonio netto) della società. Questa seconda convenzione è molto utilizzata in quanto non è necessario fare ipotesi sul futuro, ma soprattutto perché si usano dati che scaturiscono dal mercato stesso. Il valore corrente del capitale economico ottenuto è pari 62.8 miliardi.
+</p>
+</span>
+<span id="Economic-Value-Added-(EVA)">
+<h2 class="mb-3" style="font-size:190%;"><u>Economic Value Added (EVA)</u></h2>
+<p style="font-size:130%;">Il terzo ed ultimo metodo utilizzato per valutare l’impresa è l’EVA. Dal punto di vista operativo è necessario sottrarre dall’EBIT il capitale investito moltiplicato per il wacc. In particolare, l’EBIT (earning before interest and taxes) è stato stimato pari al 10% dei ricavi di ogni anno. Il wacc è quello precedentemente calcolato e il capitale investito è stato ottenuto come media del capitale investito degli anni 2019 e 2018, utilizzando la formula inversa del ROI. Una volta calcolati i flussi, essi vanno attualizzati al costo medio ponderato (wacc). A questi, come nel metodo dcf, vanno aggiunti il valore terminale attualizzato, la liquidità e i debiti finanziari.
+</p>
+<img src="images/articles/3/4.png" alt="Server Error: can't fetch the image" class="img-fluid">
+<br><br>
+<img src="images/articles/3/5.png" alt="Server Error: can't fetch the image" class="img-fluid">
+<br>
+</span>
+<br>
+<span id="Conclusioni">
+<h2 class="mb-3" style="font-size:250%;"><u>Conclusioni</u></h2>
+<img width="45%" height="45%" src="images/articles/3/6.png" alt="Server Error: can't fetch the image" class="img-fluid" style="float:right">
+<p style="font-size:130%;">Il valore corrente del capitale economico d’impresa è stato infine ottenuto come media tra i valori ottenuti con i tre metodi.
+</p>
+<br>
+<img width="45%" height="45%" src="images/articles/3/7.png" alt="Server Error: can't fetch the image" class="img-fluid" style="float:left">
+<p style="font-size:130%;">Tale valore (33.57 miliardi) è stato poi diviso per il numero di azioni in circolazione ottenendo così un prezzo per singola azione di 56,34.
+</p><br>
+<p style="font-size:130%;">A supporto della nostra analisi è lo stesso price range (56-60) con cui Airbnb ha deciso di approdare sul mercato. Tale riscontro è molto significativo in quanto testimonia che il risultato ricavato dalla nostra analisi è prossimo a quello ottenuto dagli analisti di Airbnb.
+</p>
+</span>
+<span>
+<h2 class="mb-3" style="font-size:250%;"><u>Fonti</u></h2>
+<ul>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://news.airbnb.com/it/fast-facts/"><u>https://news.airbnb.com/it/fast-facts/</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://news.airbnb.com/it/su-airbnb-piu-di-sei-milioni-di-annunci-nel-mondo/"><u>https://news.airbnb.com/it/su-airbnb-piu-di-sei-milioni-di-annunci-nel-mondo/</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://www.adnkronos.com/sostenibilita/in-privato/2019/04/16/airbnb-italia-terzo-mercato-mondo_DVuYjBvqLx6ifhx3yqHOwI.html"><u>https://www.adnkronos.com/sostenibilita/in-privato/2019/04/16/airbnb-italia-terzo-mercato-mondo_DVuYjBvqLx6ifhx3yqHOwI.html</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://www.ultimavoce.it/airbnb-noprofit/"><u>https://www.ultimavoce.it/airbnb-noprofit/</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://www.ilpost.it/2020/12/10/airbnb-quotazione-azioni/"><u>https://www.ilpost.it/2020/12/10/airbnb-quotazione-azioni/</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://www.money.it/Ipo-Airbnb-tutti-i-dettagli-dell-ingresso-in-Borsa-entro-il-2020"><u>https://www.money.it/Ipo-Airbnb-tutti-i-dettagli-dell-ingresso-in-Borsa-entro-il-2020</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://www.linkiesta.it/2020/12/airbnb-futuro-turismo-quotazione/"><u>https://www.linkiesta.it/2020/12/airbnb-futuro-turismo-quotazione/</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://www.ilpost.it/2020/12/12/airbnb-borsa-brian-chesky/"><u>https://www.ilpost.it/2020/12/12/airbnb-borsa-brian-chesky/</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://www.corrierecomunicazioni.it/digital-economy/airbnb-verso-lipo-via-al-roadshow-valutazione-35-miliardi-di-dollari/"><u>https://www.corrierecomunicazioni.it/digital-economy/airbnb-verso-lipo-via-al-roadshow-valutazione-35-miliardi-di-dollari/</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://it.wikipedia.org/wiki/Airbnb"><u>https://it.wikipedia.org/wiki/Airbnb</u></a><br>
+</li>
+<li>
+<a target="_blank" style="color:blue;font-size:130%;" href="https://it.investing.com/equities/airbnb-inc-advanced-chart"><u>https://it.investing.com/equities/airbnb-inc-advanced-chart</u></a><br>
+</li>
+</ul>
+</span>
+<br>
+<a href="files/Airbnb Equity Research.pdf" style="font-size:130%;color:blue" download>
+<button class="btn"><i class="fa fa-download"></i> Download article</button></a>
+<!--
+<h2 class="mb-3" style="font-size:230%;">Svolgimento dell’analisi</h2>
+
+<p style="font-size:130%;">
+</p>
+<br>
+
+<img src="images/articles/3/.png" alt="Server Error: can't fetch the image" class="img-fluid">
+
+<p style="font-size:130%;"><img src="images/articles/3/.png" alt="Server Error: can't fetch the image" class="img-fluid"><br>
+Figure 1.1</p>
+<br>
+-->
+              </div> <!-- .col-md-8 -->
+            </div>
+          </div>
+	</div>
+
+    
+    
+    <footer class="templateux-footer bg-light">
+      <div class="container">
+
+        <div class="row mb-5">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="block-footer-widget">
+                  <h3>Contact Us</h3>
+                  <ul class="list-unstyled">
+                    <li>equityspace@outlook.com</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="block-footer-widget">
+                  <h3>About Us</h3>
+                  <ul class="list-unstyled">
+                    <li><a href="about.html">About Us</a></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="col-md-3">
+                <div class="block-footer-widget">
+                  <h3>Connect With Us</h3>
+                  <ul class="list-unstyled block-social">
+                    <li><a href="#" class="p-1"><span class="icon-instagram"></span></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div> <!-- .row -->
+            
+          </div>
+        </div> <!-- .row -->
+
+        <div class="row pt-5 text-left">
+          <div class="col-md-12 text-left"><p>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" class="text-primary">Colorlib</a>
+            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          </p></div>
+        </div> <!-- .row -->
+
+      </div>
+    </footer> <!-- .templateux-footer -->
+    
+
+   </div> <!-- .js-animsition -->
+
+  
+  <script src="js/scripts-all.js"></script>
+  <script src="js/main.js"></script>
+  
+  </body>
+</html>
